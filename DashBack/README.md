@@ -5,10 +5,11 @@ node app.js # expects MONGO_USER and MONGO_PWD to be exported in env
 
 # Run in docker container
 docker build .  
-docker run -p 3000:3000 [imageId] -e MONGO_USER -e MONGO_PWD
+docker run -p 3000:3000 -e MONGO_USER -e MONGO_PWD [imageId]
 
-docker inspect [containerId]   # to view network, etc
 docker ps
+docker inspect [containerId]   
+docker exec -it [containerId] sh
 
 (test with curl)
 
