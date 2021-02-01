@@ -1,8 +1,7 @@
 # DashBack
 
 # Run from command line
-// expects MONGO_USER and MONGO_PWD to be exported in env
-node app.js
+node app.js # expects MONGO_USER and MONGO_PWD to be exported in env
 
 # Run in docker container
 docker build .  
