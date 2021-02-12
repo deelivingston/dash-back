@@ -24,6 +24,11 @@ class DashboardController {
         return res.json(todos);
     }
 
+    static async getContacts(req, res, next) {
+        let contacts = await (ToDoDao.getContacts());
+        return res.json(contacts);
+    }
+
 }
 
 module.exports = DashboardController;

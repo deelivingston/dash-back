@@ -1,6 +1,7 @@
 var DB = require('./db'); 
 
 let toDoCollection
+let contactCollection
 
 var MongoClient = require('mongodb').MongoClient;
 var DB = require('../dao/db'); 
@@ -15,13 +16,38 @@ class ToDoDao {
             else {
                 var database = new DB;
                 let uri = database.getUri();
-                let client = await MongoClient.connect(uri, { useNewUrlParser: true });
+                let client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
                 let collection = await client.db("Dashboard").collection("todos");
                 this.toDoCollection = collection;
             }
            
             console.log('Connected');
             let cursor = await this.toDoCollection.find();
+            return cursor.toArray();
+        } catch (e) {
+            console.error(e);
+            return []
+        } finally {
+           // close connection
+        }
+    }
+
+    // TODO: Contacts is own dao
+    static async getContacts() {
+        try {
+            if (this.contactCollection) {
+                console.log('already connected');
+            }
+            else {
+                var database = new DB;
+                let uri = database.getUri();
+                let client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+                let collection = await client.db("Dashboard").collection("contacts");
+                this.contactCollection = collection;
+            }
+
+            console.log('Connected');
+            let cursor = await this.contactCollection.find();
             return cursor.toArray();
         } catch (e) {
             console.error(e);

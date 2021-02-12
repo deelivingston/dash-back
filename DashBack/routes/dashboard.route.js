@@ -18,4 +18,6 @@ router.route('/testConnection').get(DashboardController.testConnection);
 
 router.route('/').get(DashboardController.getToDos);
 
+router.route('/contacts').get(DashboardController.getContacts);
+
 module.exports = router;
