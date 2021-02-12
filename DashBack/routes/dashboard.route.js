@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var ToDoController = require('./todo.controller');
+var DashboardController = require('./dashboard.controller');
 
 // Routes start at /dash
 
@@ -14,8 +14,8 @@ router.get('/version', function (req, res) {
     res.json(infoObject);
 });
 
-router.route('/testConnection').get(ToDoController.testConnection);
+router.route('/testConnection').get(DashboardController.testConnection);
 
-router.route('/').get(ToDoController.getToDos);
+router.route('/').get(DashboardController.getToDos);
 
 module.exports = router;

@@ -2,7 +2,7 @@ var DB = require('../dao/db');
 var ToDoDao = require('../dao/todos');
 
 
-class ToDoController {
+class DashboardController {
 
     static async testConnection(req, res, next) {
         var database = new DB;
@@ -26,4 +26,4 @@ class ToDoController {
 
 }
 
-module.exports = ToDoController;
+module.exports = DashboardController;

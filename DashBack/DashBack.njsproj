@@ -35,10 +35,10 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Dockerfile" />
-    <Content Include="routes\todo.controller.js">
+    <Content Include="routes\dashboard.controller.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="routes\todos.route.js" />
+    <Content Include="routes\dashboard.route.js" />
     <Content Include="routes\index.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
