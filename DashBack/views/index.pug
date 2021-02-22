@@ -1,8 +1,28 @@
 extends layout
 
 block content
-  h1= title
+  h1= "Dashboard API Requests"
 
-  p http://localhost:1337/dash
-  p http://localhost:1337/dash/testConnection
-  p http://localhost:1337/dash/contacts
+  script.
+    var copyIt = function copyIt(id) { 
+    var copyText = document.getElementById(id);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    }
+
+  <div>
+    <input type="text" size="38" value="http://localhost:1337/dash" id="api1">
+    button(class="info" onclick='copyIt("api1")') Copy Text </button>
+  </div>
+
+
+  <div>
+    <input type="text" size="38" value="http://localhost:1337/dash/testConnection" id="api2">
+    button(class="info" onclick='copyIt("api2")') Copy Text </button>
+  </div>
+
+    <div>
+    <input type="text" size="38" value="http://localhost:1337/dash/contacts" id="api3">
+    button(class="info" onclick='copyIt("api3")') Copy Text </button>
+  </div>

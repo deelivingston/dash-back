@@ -3,6 +3,16 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+div {
+    font: larger;
+    padding: .25em .25em .25em .25em;
+    display: block;
+}
+
+.info {
+    color: dodgerblue;
+}
+
 a {
     color: #00B7FF;
 }
